@@ -34,6 +34,8 @@ function ytdlpDownload(youtubeUrl, outputPath) {
   return new Promise((resolve, reject) => {
     const args = [
       youtubeUrl,
+      "--cookies",
+      "./cookies.txt",
       "-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best",
       "--merge-output-format", "mp4",
       "-o", outputPath,
